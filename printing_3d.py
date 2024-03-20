@@ -12,7 +12,7 @@ if base_img is None or defect_img is None:
 
 defect_img = cv2.resize(defect_img, (base_img.shape[1], base_img.shape[0]))
 diff = cv2.absdiff(base_img, defect_img)
-threshold = 30
+threshold = 60
 mask = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)[1]
 highlighted_img = cv2.cvtColor(defect_img, cv2.COLOR_GRAY2BGR)
 highlighted_img[mask == 255] = [0, 255, 255]
