@@ -17,7 +17,7 @@ pi_digits = "3141592653589793238462643383279502884197169399375105820974944592307
 largest_prime = None
 for i in range(len(pi_digits) - 4):
     num = int(pi_digits[i:i+5])
-    if isPrime(num):
+    if isPrime(num) and (largest_prime is None or num > largest_prime):
         largest_prime = num
 
 print("Largest 5-digit prime number in the first 100 digits of Pi:", largest_prime)
